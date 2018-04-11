@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.topzrt.viewstudy2">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/StarAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!--<activity android:name=".MainActivity"/>-->
+        <activity android:name=".SecondActivity"/>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+        <activity
+            android:name=".activities.RechargeActivity"
+            android:label="充值">
+        </activity>
+        <activity
+            android:name=".activities.FreshmanActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".activities.MyWebActivity">
+        </activity>
+        <activity android:name=".activities.MsgCenterActivity">
+        </activity>
+        <activity android:name=".activities.NoticeDetailActivity">
+        </activity>
+        <activity android:name=".activities.RewardPointsShopActivity">
+        </activity>
+        <activity android:name=".ui.dealdetail.FinanceDetailActivity">
+        </activity>
+        <activity android:name=".ui.setting.SettingActivity">
+        </activity>
+        <activity android:name=".ui.integralmall.IntegralMallActivity">
+        </activity>
+        <activity android:name=".ui.dochange.DoChangeRecordActivity">
+        </activity>
+        <activity android:name=".ui.signup.SignUpActivity">
+        </activity>
+        <activity android:name=".ui.BbinIncome.BbinIncomeActivity">
+        </activity>
+        <activity android:name=".ui.finance_activity.FinanceActivity">
+        </activity>
+        <activity android:name=".ui.safe_guarantee.SafeGuaranteeActivity">
+        </activity>
+    </application>
+
+</manifest>

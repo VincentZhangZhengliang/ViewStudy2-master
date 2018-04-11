@@ -1,0 +1,384 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.topzrt.viewstudy2.ui.dealdetail.fragment.FinanceDetailFragment">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <TextView
+        android:id="@+id/fragment_finance_detail_tv_deal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="5dp"
+        android:text="华兴"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line0"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/fragment_finance_detail_tv_deal_title"
+        android:background="#ff0000" />
+
+    <LinearLayout
+        android:id="@+id/fragment_finance_detail_ll_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_v_line0"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="12%"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#Ff0000" />
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_qixian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="3个月"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/fragment_finance_detail_ll_rate"
+        android:background="#ff0000" />
+
+    <LinearLayout
+        android:id="@+id/fragment_finance_detail_ll_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_v_line1"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="5dp">
+
+        <ProgressBar
+            android:id="@+id/fragment_finance_detail_pb"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7" />
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_pregress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingLeft="5dp"
+            android:text="募集进度30.0%"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_finance_detail_tv_remained_cast_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_ll_progress"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="5dp"
+        android:text="剩余可投(投)"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fragment_finance_detail_tv_remained_cast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_tv_remained_cast_tip"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="5dp"
+        android:text="307000"
+        android:textSize="18sp"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/fragment_finance_detail_tv_remained_cast"
+        android:background="@color/ccccccc" />
+
+    <TextView
+        android:id="@+id/fragment_finance_detail_tv_cast_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_v_line4"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="100元起投,有效金额为100的整数倍" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_finance_detail_rl_amount_input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_tv_cast_tip"
+        android:paddingBottom="6dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="6dp">
+
+        <ImageView
+            android:id="@+id/fragment_finance_detail_iv_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_remove_circle_black_24dp" />
+
+        <EditText
+            android:id="@+id/fragment_finance_detail_et_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/fragment_finance_detail_iv_plus"
+            android:layout_toRightOf="@+id/fragment_finance_detail_iv_minus"
+            android:background="@drawable/shape_amount"
+            android:gravity="center"
+            android:hint="请输入投资金额"
+            android:paddingBottom="8dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp" />
+
+        <ImageView
+            android:id="@+id/fragment_finance_detail_iv_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_add_circle_black_24dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fragment_finance_detail_tv_expected_earnings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_finance_detail_rl_amount_input_container"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:text="预计收益100元" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/fragment_finance_detail_tv_expected_earnings"
+        android:background="@color/ccccccc" />
+
+    <LinearLayout
+        android:id="@+id/fragment_finance_detail_ll_double_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_angle_double_up" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="上滑查看详情" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_finance_detail_ll_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_finance_detail_ll_double_up"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_safety_o" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="中融投已与滑行银行携手完成资金托管" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_finance_detail_ll_risk_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_finance_detail_ll_safe"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp">
+
+        <CheckBox
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_cb"
+            android:button="@null"
+            android:checked="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="我已阅读风险提示书" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragment_finance_detail_btn_cast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_finance_detail_ll_risk_note"
+        android:layout_marginEnd="16sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16sp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/selected_btn"
+        android:text="立即投资"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_finance_detail_rl_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_finance_detail_v_line5"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_balance_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="账户余额"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/fragment_finance_detail_tv_balance_tips"
+            android:paddingLeft="10dp"
+            android:text="200"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_bg_tv_recharge"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp"
+            android:text="充值"
+            android:textColor="@color/cC2185B"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line5"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_above="@+id/fragment_finance_detail_btn_cast"
+        android:background="@drawable/shape_dash_line"
+        android:paddingBottom="8dp" />
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_above="@+id/fragment_finance_detail_rl_balance"
+        android:background="@drawable/shape_dash_line" />
+
+    <RelativeLayout
+        android:id="@+id/fragment_finance_rl_rb_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_finance_detail_v_line3"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_rb_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="红包"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fragment_finance_detail_tv_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/fragment_finance_detail_tv_rb_tips"
+            android:hint="没有可用的红包/加息券"
+            android:paddingLeft="20dp"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_right_black_24dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fragment_finance_detail_v_line2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_above="@+id/fragment_finance_rl_rb_container"
+        android:background="@drawable/shape_dash_line" />
+
+
+</RelativeLayout>

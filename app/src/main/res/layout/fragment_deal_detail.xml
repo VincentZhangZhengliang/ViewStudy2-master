@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.topzrt.viewstudy2.ui.dealdetail.fragment.DealDetailFragment">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/fragment_deal_detail_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fragment_deal_detail_btn_cast"
+        android:layout_below="@+id/fragment_deal_detail_tablayout"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_deal_detail_loan_info" />
+
+        <include layout="@layout/layout_deal_detail_risk_control" />
+
+        <include layout="@layout/layout_deal_detail_investors" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fragment_deal_detail_btn_cast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
